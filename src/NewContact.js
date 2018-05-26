@@ -26,19 +26,27 @@ class NewContact extends Component {
 		const { name, email, phone_number, twitter } = this.state;
 
 		return (
-			<form>
-				<input type="text" value={name} onChange={event => this.setState({ name: event.target.value })} />
-				<input type="text" value={email} onChange={event => this.setState({ email: event.target.value })} />
-				<input
-					type="text"
-					value={phone_number}
-					onChange={event => this.setState({ phone_number: event.target.value })}
-				/>
-				<input type="text" value={twitter} onChange={event => this.setState({ twitter: event.target.value })} />
-				<button onClick={this.handleSubmit} disabled={!name && !email && !phone_number && !twitter}>
-					Submit
-				</button>
-			</form>
+			<center>
+				<form>
+					Nombre
+					<input type="text" value={name} onChange={event => this.setState({ name: event.target.value })} />
+					Correo
+					<input type="text" value={email} onChange={event => this.setState({ email: event.target.value })} />
+					<br />
+					Telefono
+					<input
+						type="text"
+						value={phone_number}
+						onChange={event => this.setState({ phone_number: event.target.value })}
+					/>
+					Twitter
+					<input type="text" value={twitter} onChange={event => this.setState({ twitter: event.target.value })} />
+					<br />
+					<button onClick={this.handleSubmit} disabled={!name && !email && !phone_number && !twitter}>
+						Submit
+					</button>
+				</form>
+			</center>
 		);
 	}
 }
