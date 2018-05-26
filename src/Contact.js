@@ -1,22 +1,29 @@
 import React, { Component } from 'react';
-import { string } from 'prop-types';
+import { object } from 'prop-types';
+// import { database } from './firebase';
 
 class Contact extends Component {
+	// contactsRef = database.ref('/contacts');
+
+	handleRemove = event => {
+		event.preventDefault();
+		// this.contactsRef.remove(this.contact);
+		// this.props.contact.remove();
+	};
+
 	render() {
-		const { name, email, phone_number, twitter } = this.props;
+		const { name, email, phone_number, twitter } = this.props.contact;
 		return (
 			<article>
-				{name}-{email}-{phone_number}-{twitter}
+				{name} - {email} - {phone_number} - {twitter}
+				<button onClick={this.handleRemove}>X</button>
 			</article>
 		);
 	}
 }
 
 Contact.propTypes = {
-	name: string,
-	email: string,
-	phone_number: string,
-	twitter: string,
+	contact: object,
 };
 
 export default Contact;
